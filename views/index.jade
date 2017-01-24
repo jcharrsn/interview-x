@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1(class='text-center')= title
-  p Welcome to #{title}
+	div(class='container')
+		div(class='row')
+			div(class='col-xs-12')
+				h1(class='text-center')= title
+				p.text-center Welcome to the #{title}
+	.container(ng-controller='StandingsController')
+		.row
+			table.table.table-striped
+				tr 
+					td Team Name
+					td Wins
+					td Losses
+					td Draws
+					td Points For
+					td Points Against
+				tr(ng-repeat='team in teamlist')
+					td {{team.team_name}}
+					td {{team.wins}}
+					td {{team.losses}}
+					td {{team.draws}}
+					td {{team.pointsfor}}
+					td {{team.pointsagainst}}
+
+
+

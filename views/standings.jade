@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	div(class='container')
+		div(class='row')
+			each team, in teamlist
+			div(class='col-xs-12')
+				h1(class='text-center')= team.team_name
+				p.text-center Wins: #{team.wins} Losses: #{team.losses} Draws: #{team.draws} Points For: #{team.pointsfor} Points Against: #{team.pointsagainst}
+	
